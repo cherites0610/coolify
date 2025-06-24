@@ -1,6 +1,16 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import axios from 'axios'
+
+axios.get(`${import.meta.env.VITE_API_BASE_URL}/test`)
+  .then(response => {
+    console.log(response.data)
+  })
+  .catch(error => {
+    console.error('API 錯誤:', error)
+  })
+
 </script>
 
 <template>
